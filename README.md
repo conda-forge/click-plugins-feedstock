@@ -5,7 +5,7 @@ Home: https://github.com/click-contrib/click-plugins
 
 Package license: BSD License
 
-Feedstock license: BSD
+Feedstock license: BSD 3-Clause
 
 Summary: An extension module for click to enable registering CLI commands via setuptools entry-points.
 
@@ -69,9 +69,15 @@ Terminology
 
 Current build status
 ====================
+
 Linux: [![Circle CI](https://circleci.com/gh/conda-forge/click-plugins-feedstock.svg?style=svg)](https://circleci.com/gh/conda-forge/click-plugins-feedstock)
 OSX: [![TravisCI](https://travis-ci.org/conda-forge/click-plugins-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/click-plugins-feedstock) 
 Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/click-plugins-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/click-plugins-feedstock/branch/master)
+
+Current release info
+====================
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/click-plugins/badges/version.svg)](https://anaconda.org/conda-forge/click-plugins)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/click-plugins/badges/downloads.svg)](https://anaconda.org/conda-forge/click-plugins)
 
 
 Updating click-plugins-feedstock
