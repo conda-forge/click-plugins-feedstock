@@ -3,7 +3,7 @@ About click-plugins
 
 Home: https://github.com/click-contrib/click-plugins
 
-Package license: BSD License
+Package license: BSD 3-Clause
 
 Feedstock license: BSD 3-Clause
 
