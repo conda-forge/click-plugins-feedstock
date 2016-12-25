@@ -1,9 +1,10 @@
 # This file was generated automatically from conda-smithy. To update this configuration,
-# update the conda-forge.yaml and/or the recipe/meta.yaml.
+# update the conda-forge.yml and/or the recipe/meta.yaml.
 
 language: generic
 
 os: osx
+osx_image: beta-xcode6.1
 
 env:
   matrix:
@@ -11,6 +12,7 @@ env:
     - CONDA_PY=27
     - CONDA_PY=34
     - CONDA_PY=35
+    - CONDA_PY=36
   global:
     # The BINSTAR_TOKEN secure variable. This is defined canonically in conda-forge.yml.
     - secure: "5ZdJ101a+rfyOTBG49YO3S2Stsc7Dd3mOVukHLJPRGJaPueTthDTO0n6tXw0UHpW0I+5lbNCrDEJnDFxme2pm8y3x5Zkc7q8AgdX9MJVJMoxkeB3CSpZyL5rjB/AA220vIcq8w+EHTt6/NnS4ltTWGXPKsQecoVeU3B6nuREUmuejJ0SWUIngbAJg+w9/znRUi0F8WoLJvQTZho+tZIZJOKLr3HWCb0z+07s5cRxdGFZk5NL2//JfywFK03G0DgL8AUmHSFKq2tvIx7ZIsao1E1ASegFLy1m6wBbeCnNU4CbRol4uusu3WsWy9iAq8rQmpj6TcLZscx2abA+SPi5dB66X4KRyb5Ff7DYHjodxBv05aj19FsppEN2EgQGS8rvo0sh85PuZG7xLhgf+hc0tlPqnOoShVLqM9BbF94cVy3t5XpI3K+89ZNZH2EZd/1KqB2iETveoRHHAWbQqeT9zAO2+RZa0DfOUJTzyHoj9B2jwXFG23TAF1sJp191VgdI6ojyNnKuT60CJHg/Kt4VvjxVjK1liVxl1ctnR0xRFKCP8cA9rRf3WhDmB3O4JhLwdOMzdzyNrTtADVqmlkZh4XWmxaISFW0XOFmAk/zMa8PViqICX6lt7z6vj20NzO3JF5Ju1lAuipS5hSJlOS0CPdS1zD0Ki7u33AjDgz38H3g="
@@ -24,12 +26,12 @@ before_install:
 
 install:
     - |
-      MINICONDA_URL="http://repo.continuum.io/miniconda"
+      MINICONDA_URL="https://repo.continuum.io/miniconda"
       MINICONDA_FILE="Miniconda3-latest-MacOSX-x86_64.sh"
-      curl -O "${MINICONDA_URL}/${MINICONDA_FILE}"
+      curl -L -O "${MINICONDA_URL}/${MINICONDA_FILE}"
       bash $MINICONDA_FILE -b
 
-      export PATH=/Users/travis/miniconda3/bin:$PATH
+      source /Users/travis/miniconda3/bin/activate root
       conda config --add channels conda-forge
       conda config --set show_channel_urls true
       conda install --yes --quiet conda-forge-build-setup
@@ -38,4 +40,4 @@ install:
 script:
   - conda build ./recipe
 
-  - ./ci_support/upload_or_check_non_existence.py ./recipe conda-forge --channel=main
+  - upload_or_check_non_existence ./recipe conda-forge --channel=main
