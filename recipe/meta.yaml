@@ -1,4 +1,4 @@
-{% set version = "1.0.3" %}
+{% set version = "1.0.4" %}
 
 package:
   name: click-plugins
@@ -7,11 +7,11 @@ package:
 source:
   fn: click-plugins-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/c/click-plugins/click-plugins-{{ version }}.tar.gz
-  sha256: 7acc5e7eedd2dfd719714e8d53ae99030b5357aed661d0b06dacd6c2d583d7c5
+  sha256: dfed74b5063546a137de99baaaf742b4de4337ad2b3e1df5ec7c8a256adc0847
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
