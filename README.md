@@ -3,11 +3,11 @@ About click-plugins
 
 Home: https://github.com/click-contrib/click-plugins
 
-Package license: BSD 3-Clause
+Package license: BSD-3-Clause
 
 Feedstock license: BSD 3-Clause
 
-Summary: An extension module for click to enable registering CLI commands via setuptools entry-points.
+Summary: An extension module for click to enable registering CLI commands via setuptools entry-points
 
 
 
