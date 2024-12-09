@@ -5,24 +5,26 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/c/click-plugins/click-plugins-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/c/click-plugins/click-plugins-{{ version }}.tar.gz
   sha256: 46ab999744a9d831159c3411bb0c79346d94a444df9a3a3742e9ed63645f264b
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - pip
     - click >=3.0
   run:
-    - python
+    - python >={{ python_min }}
     - click >=3.0
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - click_plugins
 
