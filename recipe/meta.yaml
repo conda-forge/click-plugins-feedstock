@@ -1,17 +1,17 @@
-{% set version = "1.1.1" %}
+{% set version = "1.1.1.2" %}
 
 package:
   name: click-plugins
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/c/click-plugins/click-plugins-{{ version }}.tar.gz
-  sha256: 46ab999744a9d831159c3411bb0c79346d94a444df9a3a3742e9ed63645f264b
+  url: https://pypi.org/packages/source/c/click-plugins/click_plugins-{{ version }}.tar.gz
+  sha256: d7af3984a99d243c131aa1a828331e7630f4a88a9741fd05c927b204bcf92261
 
 build:
-  number: 1
+  number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation 
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
