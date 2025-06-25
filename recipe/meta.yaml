@@ -18,16 +18,18 @@ requirements:
     - python {{ python_min }}
     - setuptools
     - pip
-    - click >=3.0
   run:
     - python >={{ python_min }}
-    - click >=3.0
+    - click >=4.0
 
 test:
-  requires:
-    - python {{ python_min }}
   imports:
     - click_plugins
+  commands:
+    - pip check
+  requires:
+    - python {{ python_min }}
+    - pip
 
 about:
   home: https://github.com/click-contrib/click-plugins
